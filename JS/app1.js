@@ -4,20 +4,16 @@ function setup() {
 
 function draw() {
     background(220);
-    fill("blue");
-    square(50, 50, 200);
     fill("black");
-    circle(150, 150, 150);
-    fill("Blue");
-    circle(150, 150, 100);
+    rect(75, 100, 100, 200);
+    fill("darkblue");
+    rect(175, 100, 100, 200);
     fill("red");
-    circle(100, 100, 100);
+    circle(175, 200, 175);
     fill("white");
-    circle(200, 200, 100);
-    fill("orange");
-    circle(100, 200, 100);
-    fill("pink");
-    circle(200, 100, 100);
-    fill("black");
-    circle(150, 150, 50);
+    circle(175, 200, 125);
+    fill("darkgreen");
+    circle(175, 200, 75);
+    fill("gold");
+
 }
