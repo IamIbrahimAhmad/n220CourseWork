@@ -2,6 +2,9 @@ function setup() {
     createCanvas(400, 400);
 }
 
+let midX = 175;
+let midY = 200;
+
 function draw() {
     background(220);
     fill("black");
@@ -9,11 +12,10 @@ function draw() {
     fill("darkblue");
     rect(175, 100, 100, 200);
     fill("red");
-    circle(175, 200, 175);
+    circle(midX, midY, 175);
     fill("white");
-    circle(175, 200, 125);
+    circle(midX, midY, 125);
     fill("darkgreen");
-    circle(175, 200, 75);
+    circle(midX, midY, 75);
     fill("gold");
-
 }
