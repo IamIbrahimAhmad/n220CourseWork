@@ -5,6 +5,7 @@ function setup() {
 let color = "black";
 
 function draw() {
+    background(150);
     if (mouseX < 200) {
         color = "blue"
         fill(color);

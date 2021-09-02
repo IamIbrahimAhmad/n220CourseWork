@@ -27,5 +27,6 @@ function mouseClicked() {
     }
     count++;
     document.getElementById("count").innerHTML = count.toString();
+    console.log(count);
     return false;
 }
