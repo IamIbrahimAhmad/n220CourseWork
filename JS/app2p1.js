@@ -21,10 +21,6 @@ function mouseClicked() {
 
     fill(r, g, b);
     circle(mouseX, mouseY, 50);
-    color += 25;
-    if (color >= 255) {
-        color = 0;
-    }
     count++;
     document.getElementById("count").innerHTML = count.toString();
     console.log(count);
