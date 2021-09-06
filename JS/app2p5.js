@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(800, 600);
-    frameRate(1);
+    frameRate(60);
 }
 
 let r = 0;
