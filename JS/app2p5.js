@@ -19,5 +19,6 @@ function draw() {
     size = frameCount;
     if (size >= 200) {
         size = 1;
+        frameCount = 1;
     }
 }
