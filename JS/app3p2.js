@@ -9,7 +9,7 @@ function draw() {
     let y = 15;
     for (i = 0; i < 4; i++) {
         for (j = 0; j <= i; j++) {
-            fill("green")
+            fill("red")
             square(x, y, 50);
             x += 55;
         }
