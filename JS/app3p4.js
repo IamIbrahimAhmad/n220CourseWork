@@ -12,7 +12,7 @@ let b;
 
 //size will get 5 random numbers
 for (let i = 0; i < 5; i++) {
-    size[i] = Math.floor(Math.random() * 80) + 20;
+    size[i] = Math.floor(Math.random() * 70) + 70;
     console.log(size[i]);
 }
 
