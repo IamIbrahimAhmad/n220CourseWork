@@ -1,6 +1,5 @@
 function setup() {
     createCanvas(1000, 1000);
-    frameRate(5);
 }
 
 let locationY = [];
