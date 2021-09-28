@@ -1,30 +1,28 @@
-function setup() {
-    createCanvas(800, 600);
-    background(150);
-}
+for (var i = 1; i <= 15; i++) {
+    // to creat a div
+    var div = document.createElement("div");
 
-let size = [];
-let x = 100;
-let count = 0;
-let r;
-let g;
-let b;
+    //height and width for div
+    div.style.height = "100px";
+    div.style.width = "100px";
 
-//size will get 5 random numbers
-for (let i = 0; i < 5; i++) {
-    size[i] = Math.floor(Math.random() * 70) + 70;
-    console.log(size[i]);
-}
-
-function draw() {
-    //it will draw a circle for each amount in the size array
-    while (count < 5) {
-        r = random(255);
-        g = random(255);
-        b = random(255);
-        fill(r, g, b);
-        circle(x, 300, size[count]);
-        x += 150;
-        count++;
+    if (i === 6) {
+        div.style.clear = "both";
+        div.style.float = "left";
+    } else if (i === 11) {
+        div.style.clear = "both";
+        div.style.float = "left";
+    } else {
+        div.style.float = "left";
     }
+
+    if (i % 2 !== 0) {
+        div.style.backgroundColor = "blue";
+    } else if (i % 2 === 0) {
+        div.style.backgroundColor = "red";
+    }
+
+    document.body.style.backgroundColor = "gold";
+
+    document.body.appendChild(div);
 }
