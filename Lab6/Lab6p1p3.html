@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 - Battle System</title>
+</head>
+
+<style>
+    body {
+        background-color: gold;
+    }
+    
+    div h1 {
+        font-family: 'Brush Script MT', cursive;
+    }
+    
+    #player {
+        float: left;
+    }
+    
+    #moves {
+        text-align: center;
+    }
+    
+    #enemy {
+        float: right;
+    }
+    
+    button {
+        display: inline-block;
+        padding: 5px 15px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: gold;
+        background-color: darkblue;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px grey;
+    }
+</style>
+
+<body>
+    <h2 id="moves"></h2>
+
+    <div>
+        <div id="player">
+            <h1 id="hpPlayer"></h1>
+            <button type="button" onclick="playerAttack" id="playerAttack">Attack</button>
+            <button type="button" onclick="playerDefense" id="playerDefense">Defense</button>
+        </div>
+
+        <div id="enemy">
+            <h1 id="hpEnemy"></h1>
+        </div>
+    </div>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <script src="JS/app5p1p3.js"></script>
+</body>
+
+</html>
