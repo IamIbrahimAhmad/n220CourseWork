@@ -16,13 +16,8 @@ let moves = 2;
 let playerTurn = false;
 let enemyTurn = false;
 
-let playerDef = 0;
-let enemyDef = 0;
-
 document.getElementById("hpPlayer").innerHTML = "Player HP: " + player.hp;
-document.getElementById("defPlayer").innerHTML = "Player Defense: " + playerDef;
 document.getElementById("hpEnemy").innerHTML = "Enemy HP: " + enemy.hp;
-document.getElementById("defEnemy").innerHTML = "Enemy Defense: " + enemyDef;
 document.getElementById("moves").innerHTML = moves;
 
 if (turn === 1) {
@@ -35,11 +30,7 @@ if (turn === 1) {
 
 function playerAttack() {
     if (playerTurn && !enemyTurn && moves > 0) {
-        enemy.hp = enemy.hp - (player.attack - enemyDef);
-        if (enemyDef > 0) {
-            enemyDef = 0;
-            document.getElementById("defEnemy").innerHTML = "Enemy Defense: " + enemyDef;
-        }
+        enemy.hp = enemy.hp - player.attack;
         document.getElementById("hpEnemy").innerHTML = "Enemy HP: " + enemy.hp;
         moves--;
         document.getElementById("moves").innerHTML = moves;
@@ -53,15 +44,13 @@ function playerAttack() {
             moves = 2;
             document.getElementById("moves").innerHTML = moves;
         }
-    } else if (!playerTurn && enemyTurn && moves > 0) {
-        enemyT();
     }
 }
 
 function playerDefense() {
     if (playerTurn && !enemyTurn && moves > 0) {
-        playerDef = playerDef + player.defense;
-        document.getElementById("defPlayer").innerHTML = "Player Defense: " + playerDef;
+        player.hp = player.hp + player.defense;
+        document.getElementById("hpPlayer").innerHTML = "Player HP: " + player.hp;
         moves--;
         document.getElementById("moves").innerHTML = moves;
         if (moves === 0) {
@@ -70,8 +59,6 @@ function playerDefense() {
             moves = 2;
             document.getElementById("moves").innerHTML = moves;
         }
-    } else if (!playerTurn && enemyTurn && moves > 0) {
-        enemyT();
     }
 }
 
@@ -84,11 +71,7 @@ function enemyT() {
         var enemyOp = Math.floor(Math.random() * 2) + 1;
         if (enemyOp === 1) {
             if (!playerTurn && enemyTurn && moves > 0) {
-                player.hp = player.hp - (enemy.attack - playerDef);
-                if (playerDef > 0) {
-                    playerDef = 0;
-                    document.getElementById("defPlayer").innerHTML = "Player Defense: " + playerDef;
-                }
+                player.hp = player.hp - enemy.attack;
                 document.getElementById("hpPlayer").innerHTML = "Player HP: " + player.hp;
                 moves--;
                 document.getElementById("moves").innerHTML = moves;
@@ -105,8 +88,8 @@ function enemyT() {
             }
         } else if (enemyOp === 2) {
             if (!playerTurn && enemyTurn && moves > 0) {
-                enemyDef = enemyDef + enemy.defense;
-                document.getElementById("defEnemy").innerHTML = "Enemy Defense: " + enemyDef;
+                enemy.hp = enemy.hp + enemy.defense;
+                document.getElementById("hpEnemy").innerHTML = "Enemy HP: " + enemy.hp;
                 moves--;
                 document.getElementById("moves").innerHTML = moves;
                 if (moves === 0) {
