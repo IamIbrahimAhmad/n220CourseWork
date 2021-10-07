@@ -62,41 +62,42 @@ function playerDefense() {
     }
 }
 
-if (!playerTurn && enemyTurn && moves > 0) {
-    enemyT();
-}
+
+setTimeout(function() { enemyT(); }, 1);
 
 function enemyT() {
-    for (let i = 0; i < 2; i++) {
-        var enemyOp = Math.floor(Math.random() * 2) + 1;
-        if (enemyOp === 1) {
-            if (!playerTurn && enemyTurn && moves > 0) {
-                player.hp = player.hp - enemy.attack;
-                document.getElementById("hpPlayer").innerHTML = "Player HP: " + player.hp;
-                moves--;
-                document.getElementById("moves").innerHTML = moves;
-                if (enemy.hp <= 0) {
-                    playerTurn = false;
-                    enemyTurn = false;
-                }
-                if (moves === 0) {
-                    playerTurn = !playerTurn;
-                    enemyTurn = !enemyTurn;
-                    moves = 2;
+    if (!playerTurn && enemyTurn && moves > 0) {
+        for (let i = 0; i < 2; i++) {
+            var enemyOp = Math.floor(Math.random() * 2) + 1;
+            if (enemyOp === 1) {
+                if (!playerTurn && enemyTurn && moves > 0) {
+                    player.hp = player.hp - enemy.attack;
+                    document.getElementById("hpPlayer").innerHTML = "Player HP: " + player.hp;
+                    moves--;
                     document.getElementById("moves").innerHTML = moves;
+                    if (enemy.hp <= 0) {
+                        playerTurn = false;
+                        enemyTurn = false;
+                    }
+                    if (moves === 0) {
+                        playerTurn = !playerTurn;
+                        enemyTurn = !enemyTurn;
+                        moves = 2;
+                        document.getElementById("moves").innerHTML = moves;
+                    }
                 }
-            }
-        } else if (enemyOp === 2) {
-            if (!playerTurn && enemyTurn && moves > 0) {
-                enemy.hp = enemy.hp + enemy.defense;
-                document.getElementById("hpEnemy").innerHTML = "Enemy HP: " + enemy.hp;
-                moves--;
-                document.getElementById("moves").innerHTML = moves;
-                if (moves === 0) {
-                    playerTurn = !playerTurn;
-                    enemyTurn = !enemyTurn;
-                    moves = 2;
+            } else if (enemyOp === 2) {
+                if (!playerTurn && enemyTurn && moves > 0) {
+                    enemy.hp = enemy.hp + enemy.defense;
+                    document.getElementById("hpEnemy").innerHTML = "Enemy HP: " + enemy.hp;
+                    moves--;
                     document.getElementById("moves").innerHTML = moves;
+                    if (moves === 0) {
+                        playerTurn = !playerTurn;
+                        enemyTurn = !enemyTurn;
+                        moves = 2;
+                        document.getElementById("moves").innerHTML = moves;
+                    }
                 }
             }
         }
