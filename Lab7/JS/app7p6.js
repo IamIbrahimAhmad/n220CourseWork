@@ -9,9 +9,9 @@ function check() {
         return h1.innerHTML = "Right.";
     } else if (num !== rNum) {
         if (num > rNum) {
-            return h1.innerHTML = "Wrong, you rnumber is greater. Guess again.";
+            return h1.innerHTML = "Wrong, your number is greater. Guess again.";
         } else if (num < rNum) {
-            return h1.innerHTML = "Wrong, you rnumber is smaller. Guess again.";
+            return h1.innerHTML = "Wrong, your number is smaller. Guess again.";
         }
     }
 }
