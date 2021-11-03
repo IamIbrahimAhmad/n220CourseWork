@@ -14,6 +14,7 @@ function Translate() {
 function getLetters() {
     let letter = [];
     let txt = document.getElementById("txt").value;
+    txt = txt.toLowerCase();
     letters = [];
     for (let i = 0; i < txt.length; i++) {
         letter.push(txt.split("")[i]);
