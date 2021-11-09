@@ -12,9 +12,9 @@ function Check() {
     found = false;
     words = txt.split(" ");
 
-    for (var i = 0; i < words.length; i++) {
+    for (var i = 0; i < words.length - 1; i++) {
         words[i] = words[i].toLowerCase();
-        if (words[i] === "clear" || words[i] === "water" || words[i] === "tires") {
+        if (words.includes("clear") || words.includes("water") || words.includes("tires")) {
             found = true;
             count++;
         }

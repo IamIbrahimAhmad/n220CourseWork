@@ -25,4 +25,5 @@ function Average() {
     average = sum / numbers.length;
     console.log(average);
     h1.innerHTML = "The sum is: " + sum + " and the average is: " + average;
+    document.getElementById("txt").value = "";
 }
