@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixer</title>
+</head>
+
+<style>
+    body {
+        background-image: url('imgs/Lab10p2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+    #color {
+        width: 1150px;
+        height: 700px;
+        background-color: grey;
+    }
+    
+    #rgb {
+        width: 1150px;
+        height: 30px;
+        background-color: grey;
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    #red {
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: red;
+    }
+    
+    #green {
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: green;
+    }
+    
+    #blue {
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: blue;
+    }
+    
+    button {
+        height: 25px;
+        width: 75px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
+<body>
+    <div id="color"></div>
+    <div>
+        <h1 id="rgb"></h1>
+    </div>
+    <table>
+        <tr>
+            <td><label id="red">Red: </label></td>
+            <td><button type="button" onclick="change(event)" data-color="red" data-value="1">+1</button></td>
+            <td><button type="button" onclick="change(event)" data-color="red" data-value="5">+5</button></td>
+            <td><button type="button" onclick="change(event)" data-color="red" data-value="10">+10</button></td>
+        </tr>
+        <tr>
+            <td><label id="green">Green: </label></td>
+            <td><button type="button" onclick="change(event)" data-color="green" data-value="1">+1</button></td>
+            <td><button type="button" onclick="change(event)" data-color="green" data-value="5">+5</button></td>
+            <td><button type="button" onclick="change(event)" data-color="green" data-value="10">+10</button></td>
+        </tr>
+        <tr>
+            <td><label id="blue">Blue: </label></td>
+            <td><button type="button" onclick="change(event)" data-color="blue" data-value="1">+1</button></td>
+            <td><button type="button" onclick="change(event)" data-color="blue" data-value="5">+5</button></td>
+            <td><button type="button" onclick="change(event)" data-color="blue" data-value="10">+10</button></td>
+        </tr>
+    </table>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" integrity="sha512-N4kV7GkNv7QR7RX9YF/olywyIgIwNvfEe2nZtfyj73HdjCUkAfOBDbcuJ/cTaN04JKRnw1YG1wnUyNKMsNgg3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <script src="JS/app10p2.js"></script>
+</body>
+
+</html>
