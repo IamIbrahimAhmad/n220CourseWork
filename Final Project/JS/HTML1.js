@@ -10,11 +10,13 @@ let playerTurn = 0;
 
 let done = false;
 
+let move = 0;
+
 function play(event) {
     let y = parseInt(event.target.getAttribute("data-y"));
     let x = parseInt(event.target.getAttribute("data-x"));
 
-    if (playerTurn === 0 && !done) {
+    if (playerTurn === 0 && !done && (moves[y][x] === -1)) {
         moves[y][x] = 0;
         event.target.style.backgroundColor = "blue";
         if (moves[0][0] === 0 && moves[0][1] === 0 && moves[0][2] === 0) {
@@ -43,7 +45,8 @@ function play(event) {
             done = true
         }
         playerTurn = 1;
-    } else if (playerTurn === 1 && !done) {
+        move++;
+    } else if (playerTurn === 1 && !done && (moves[y][x] === -1)) {
         moves[y][x] = 1;
         event.target.style.backgroundColor = "red";
         if (moves[0][0] === 1 && moves[0][1] === 1 && moves[0][2] === 1) {
@@ -72,5 +75,10 @@ function play(event) {
             done = true
         }
         playerTurn = 0;
+        move++;
+    }
+    if (move === 9 && !done) {
+        h1.innerHTML = "Draw";
+        done = true
     }
 }
